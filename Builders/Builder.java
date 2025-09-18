@@ -1,9 +1,11 @@
 package Builders;
 
 import MilkShakes.MilkShake;
+import java.util.Scanner;
 
 public class Builder implements IBuilder {
     public MilkShake milkShake = new MilkShake();
+    private Scanner input = new Scanner(System.in);
 
 
     @Override
@@ -21,9 +23,40 @@ public class Builder implements IBuilder {
         // Implementation here
         milkShake.setIceCreamFlavour(iceCreamFlavour);
     }
+
+    @Override
+    public void buildFlavour(String milkShakeFlavour) {
+        // Implementation here
+        milkShake.setFlavour(milkShakeFlavour);
+    }
+
     @Override
     public MilkShake getMilkShake() {
         return this.milkShake;
     }
 
+    
+    @Override
+    public void buildIfMilk(){
+        if (!this.milkShake.addMilk){
+            System.out.println("Which milk flavour do you want?");
+            String milkFlavour = input.nextLine();
+            this.milkShake.addMilk = true;
+            buildMilk(milkFlavour);
+            input.close();
+        }
+    }
+
+    @Override
+    public void buildIfIceCream(){
+        if (!this.milkShake.addMilk){
+            this.milkShake.addIceCream = true;
+        }
+    }
+    @Override
+    public void buildIfWater(){
+        if (!this.milkShake.addMilk){
+            this.milkShake.addWater = true;
+        }
+    }
 }

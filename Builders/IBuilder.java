@@ -6,5 +6,9 @@ public interface IBuilder {
     public void buildName(String name);
     public void buildMilk(String milkFlavour);
     public void buildIceCream(String iceCreamFlavour);
+    public void buildFlavour(String flavour);
+    public void buildIfMilk();
+    public void buildIfIceCream();
+    public void buildIfWater();
     public MilkShake getMilkShake();
 }
