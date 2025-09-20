@@ -13,17 +13,17 @@ public class Director {
     public MilkShake buildChocoTin() {
         builder.buildName("Choco Tin");
         builder.buildIfMilk();
-        builder.buildMilk("Chocolate");
         builder.buildIfIceCream();
         builder.buildIceCream("Chocolate");
+        builder.buildFlavour("Chocolate");
         return builder.getMilkShake();
     }
 
     public MilkShake buildFrezzBerry() {
         builder.buildName("Frezz Berry");
-        builder.buildIfMilk();
         builder.buildIfIceCream();
         builder.buildIceCream("Chocolate");
+        builder.buildFlavour("Blueberry");
         return builder.getMilkShake();
     }
 
@@ -32,6 +32,7 @@ public class Director {
         builder.buildIfMilk();
         builder.buildIfIceCream();
         builder.buildIceCream("Vanilla");
+        builder.buildFlavour("Banana");
         return builder.getMilkShake();
     }
 }

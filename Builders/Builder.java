@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Builder implements IBuilder {
     public MilkShake milkShake = new MilkShake();
-    private Scanner input = new Scanner(System.in);
+    public static Scanner input = new Scanner(System.in);
 
 
     @Override
@@ -43,7 +43,7 @@ public class Builder implements IBuilder {
             String milkFlavour = input.nextLine();
             this.milkShake.addMilk = true;
             buildMilk(milkFlavour);
-            input.close();
+            
         }
     }
 

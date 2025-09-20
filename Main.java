@@ -12,8 +12,7 @@ public class Main {
 
         List<MilkShake> milkShakes = new ArrayList<>(); 
         Director starBicks = new Director(new Builder());
-
-        Scanner scanner = new Scanner(System.in);
+        
         int condition = -1;
         while (condition != 0) {
             System.out.println("1. Order Choco Tin");
@@ -21,8 +20,10 @@ public class Main {
             System.out.println("3. Order Bananini");
             System.out.println("4. Show all orders");
             System.out.println("0. Exit");
-            condition = Integer.parseInt(scanner.nextLine());
-            switch (condition) {
+            System.out.print("Choose an option: ");
+            if (Builder.input.hasNextLine()) {
+                Builder.input.nextLine(); // Consume any leftover newline
+            } switch (condition) {
                 case 1:
                     MilkShake chocoTin = starBicks.buildChocoTin();
                     milkShakes.add(chocoTin);
@@ -55,6 +56,6 @@ public class Main {
                     break;
             }
         }
-        scanner.close();
+        Builder.input.close();
     }
 }
